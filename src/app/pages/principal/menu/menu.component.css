@@ -1,0 +1,30 @@
+.sidebar-site{
+  position: fixed;
+  display: block;
+  background-color: black;
+  width: 13%;
+  height: 100%;
+  left: 0px;
+}
+
+
+.sidebar-site ul li {
+  color: rgba(230, 230, 230, .9);
+  list-style: none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, .3);
+  text-align: center;
+}
+
+.sidebar-active{
+  left: -15%;
+}
+
+.w100p{
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+ color: white;
+}

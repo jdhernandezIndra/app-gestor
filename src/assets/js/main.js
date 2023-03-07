@@ -1,19 +1,8 @@
-(function($) {
+// sidebar toggle
+const btnToggle = document.querySelector('.toggle-btnn');
 
-	"use strict";
-
-	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
-	fullHeight();
-
-	$('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-  });
-
-})(jQuery);
+btnToggle.addEventListener('click', function () {
+  console.log('clik')
+  document.getElementById('sidebare').classList.toggle('active');
+  console.log(document.getElementById('sidebare'))
+});

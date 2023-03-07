@@ -1,0 +1,13 @@
+.w80p-fr{
+  width: 87%;
+  float: right;
+  height: 3%;
+  margin: 0 auto;
+}
+
+.w80p-fr-active{
+  width: 100%;
+  float: right;
+  height: 70px;
+  margin: 0 auto;
+}
