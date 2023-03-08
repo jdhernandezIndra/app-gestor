@@ -13,6 +13,9 @@ import { PaginasComponent } from './pages/paginas.component';
 import { MenuComponent } from './pages/principal/menu/menu.component';
 import { HeaderComponent } from './pages/principal/header/header.component';
 import { FooterComponent } from './pages/principal/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,16 @@ import { FooterComponent } from './pages/principal/footer/footer.component';
     PaginasComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
