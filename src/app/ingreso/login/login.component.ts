@@ -35,7 +35,6 @@ export class LoginComponent {
           })
         )
         .subscribe((resp:token) => {
-          console.log(resp)
           localStorage.setItem('token',resp.token);
           this.router.navigateByUrl('/');
         });
