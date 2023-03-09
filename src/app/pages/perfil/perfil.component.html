@@ -1,1 +1,28 @@
-<p>perfil works!</p>
+<div class="row">
+  <div class="col col-app">
+    <h3 class="text-center">Editar perfil</h3>
+    <div class="input-group mb-3">
+      <img src="http://localhost:8080/media/perfil.jpeg" class="rounded-circle mx-auto d-block img-thumbnail" width="100"
+        height="100" alt="imagen de usuario">
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Usuario" aria-label="Username"
+        aria-describedby="basic-addon1" [(ngModel)]="usuario" disabled>
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Nombres" aria-label="Username">
+      <span class="input-group-text"></span>
+      <input type="text" class="form-control" placeholder="Apellidos" aria-label="Server">
+    </div>
+    <div class="mb-3">
+    <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+    <label class="form-control btn btn-primary" for="btn-check-2">Estado</label>
+  </div>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupFile01">Cargar</label>
+      <input type="file" class="form-control" id="inputGroupFile01">
+    </div>
+    <button type="button" class="form-control btn btn-success">Guardar</button>
+  </div>
+  <div class="col col-app"></div>
+</div>

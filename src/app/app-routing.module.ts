@@ -8,16 +8,17 @@ import { PaginasComponent } from './pages/paginas.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
+
   {
+
     path: '',
     component: PaginasComponent,
     children: [
-      { path: 'inicio', component: InicioComponent },
       { path: 'perfil', component: PerfilComponent },
+      { path: 'inicio', component: InicioComponent },
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
     ]
   },
-
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 

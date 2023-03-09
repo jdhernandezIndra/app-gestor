@@ -25,19 +25,16 @@ export class LoginComponent {
         usuario: this.usuario,
         password: this.password,
       };
-      console.log(user)
-      this.usuarioservices
-        .login(user)
-        .pipe(
-          catchError((err) => {
-            Swal.fire('Error', err, 'warning');
-            return throwError(err);
-          })
-        )
-        .subscribe((resp:token) => {
-          localStorage.setItem('token',resp.token);
-          this.router.navigateByUrl('/');
-        });
+      this.usuarioservices.login(user).subscribe(
+        (resp: token) => {
+          localStorage.setItem('token', resp.token);
+          localStorage.setItem('user', user.usuario);
+          this.router.navigateByUrl('/inicio');
+        },
+        (err:Response) => {
+          Swal.fire('Error', '' + err.statusText, 'error');
+        }
+      );
     } else {
       Swal.fire('Error', 'Los campos deben estar diligenciados', 'error');
     }
