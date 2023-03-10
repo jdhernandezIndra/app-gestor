@@ -13,7 +13,7 @@ export class UsuariosService {
   public cabeceras = new HttpHeaders({
     'Content-Type': 'application/json; charset=utf-8',
     authorization:
-      'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiZXhwIjoxNjgwNzA2NTUwfQ.s4WZIWw3QzQ1hxuQu1ONCrmFs8HI-Pq5m_l10XCDomulm1DvkxUXzN7neuVMwYnx',
+      'Bearer '+localStorage.getItem('token'),
   });
   constructor(private http: HttpClient) {}
   public registra(usuario: Usuarios): Observable<Usuarios> {
@@ -22,5 +22,10 @@ export class UsuariosService {
 
   public login(usuario: tokenUsuarios): Observable<token>{
     return this.http.post<token>(this.Url + 'token', usuario);
+  }
+
+
+  public usuario(): Observable<Usuarios>{
+    return this.http.get<Usuarios>(this.Url + 'usuarios/'+localStorage.getItem('user'),{headers:this.cabeceras});
   }
 }

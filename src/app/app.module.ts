@@ -16,26 +16,20 @@ import { FooterComponent } from './pages/principal/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { PagesModule } from './pages/pages.module';
+import { IngresoModule } from './ingreso/ingreso.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     NopageFoundComponent,
-    InicioComponent,
-    PaginasComponent,
-    MenuComponent,
-    HeaderComponent,
-    FooterComponent,
-    PerfilComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    PagesModule,
+    IngresoModule
   ],
   providers: [],
   bootstrap: [AppComponent],

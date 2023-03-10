@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -6,8 +7,15 @@ import Swal from 'sweetalert2';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent {
-  swt(){
-Swal.fire('Hola','funciona!!!','success');
+export class InicioComponent implements OnInit{
+  constructor(private router:Router){}
+  ngOnInit(): void {
+    if(localStorage.getItem('token')===null){
+      this.router.navigate(['/login']);
+      if(localStorage.getItem('user')!=null){
+        localStorage.removeItem('user');
+      }
+    }
   }
+
 }
