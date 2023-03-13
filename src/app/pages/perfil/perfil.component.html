@@ -2,12 +2,12 @@
   <div class="col col-app">
     <h3 class="text-center">Editar perfil</h3>
     <div class="input-group mb-3">
-      <img [src]="srcImage" class="rounded-circle mx-auto d-block img-thumbnail" width="100"
+      <img [src]="usuario.urlImagen" class="rounded-circle mx-auto d-block img-thumbnail" width="100"
         height="100" alt="imagen de usuario">
     </div>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Usuario" aria-label="Username"
-        aria-describedby="basic-addon1" [(ngModel)]="usuario" disabled>
+        aria-describedby="basic-addon1" [(ngModel)]="usuario.usuario" disabled>
     </div>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Nombres" aria-label="Username">

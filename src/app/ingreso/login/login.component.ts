@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { token } from 'src/app/interfaces/token';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 import { tokenUsuarios } from 'src/app/interfaces/usuarios-token';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 import Swal from 'sweetalert2';
@@ -31,10 +32,20 @@ export class LoginComponent {
           localStorage.setItem('user', user.usuario);
           this.router.navigateByUrl('/inicio');
         },
-        (err:Response) => {
+        (err: Response) => {
           Swal.fire('Error', '' + err.statusText, 'error');
         }
       );
+      this.usuarioservices.usuario().subscribe((resp: Usuarios) => {
+        this.usuarioservices.Setuser(
+          resp.nombres,
+          resp.apellidos,
+          resp.usuario,
+          resp.password,
+          resp.estado,
+          resp.urlImagen
+        );
+      });
     } else {
       Swal.fire('Error', 'Los campos deben estar diligenciados', 'error');
     }

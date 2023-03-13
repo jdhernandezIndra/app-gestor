@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Usuario } from 'src/app/modelos/usuario';
 import { ApiImageService } from 'src/app/servicios/api-image.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 import Swal from 'sweetalert2';
@@ -8,19 +9,12 @@ import Swal from 'sweetalert2';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css'],
 })
-export class PerfilComponent implements OnInit {
-  public usuario: string = '';
+export class PerfilComponent {
 
-  public srcImage: string = 'http://localhost:8080/media/visualizar/perfil.jpeg';
+  public usuario:Usuario;
 
-  constructor(private api: ApiImageService,private usuarioservices:UsuariosService) {}
-  ngOnInit(): void {
-    this.usuario = localStorage.getItem('user') || '';
-    if (this.usuario != '') {
-      this.usuarioservices.usuario().subscribe(res=>{
-        //this.srcImage=res.urlImagen;
-      });
-    }
+  constructor(private api: ApiImageService,public usuarioservices:UsuariosService) {
+    this.usuario= usuarioservices.user;
   }
 
   upload(event: any) {
@@ -32,7 +26,8 @@ export class PerfilComponent implements OnInit {
 
       this.api.upFile(formdata).subscribe(
         (response) => {
-          this.srcImage = response.url;
+          this.usuario.urlImagen = response.url;
+          this.usuarioservices.user.urlImagen= response.url;
           Swal.fire('Se cargo imagen correctamente!');
         },
         (err: Response) => {

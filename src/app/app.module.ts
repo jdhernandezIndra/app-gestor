@@ -18,20 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { PagesModule } from './pages/pages.module';
 import { IngresoModule } from './ingreso/ingreso.module';
+import { UsuariosService } from './servicios/usuarios.service';
+import { ApiImageService } from './servicios/api-image.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NopageFoundComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PagesModule,
-    IngresoModule
-  ],
-  providers: [],
+  declarations: [AppComponent, NopageFoundComponent],
+  imports: [BrowserModule, AppRoutingModule, PagesModule, IngresoModule],
+  providers: [UsuariosService, ApiImageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
