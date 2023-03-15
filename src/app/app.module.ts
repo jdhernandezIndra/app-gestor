@@ -23,7 +23,7 @@ import { ApiImageService } from './servicios/api-image.service';
 
 @NgModule({
   declarations: [AppComponent, NopageFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, PagesModule, IngresoModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,PagesModule, IngresoModule],
   providers: [UsuariosService, ApiImageService],
   bootstrap: [AppComponent],
 })

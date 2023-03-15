@@ -17,6 +17,7 @@ export class HeaderComponent {
   }
   salir(){
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
 

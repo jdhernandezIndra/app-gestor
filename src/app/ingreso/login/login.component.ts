@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { token } from 'src/app/interfaces/token';
@@ -13,41 +14,35 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  public usuario: string = '';
-  public password: string = '';
+
+  public usuarioerror:string="";
+  loginForm=this.fb.group({
+    usuario:['',Validators.required],
+    password:['',Validators.required],
+  });
+
   constructor(
     private router: Router,
-    private usuarioservices: UsuariosService
+    private usuarioservices: UsuariosService,
+    private fb: FormBuilder
   ) {}
 
   login() {
-    if (this.usuario != '' && this.password != '') {
-      const user: tokenUsuarios = {
-        usuario: this.usuario,
-        password: this.password,
-      };
-      this.usuarioservices.login(user).subscribe(
-        (resp: token) => {
-          localStorage.setItem('token', resp.token);
-          localStorage.setItem('user', user.usuario);
-          this.router.navigateByUrl('/inicio');
-        },
-        (err: Response) => {
-          Swal.fire('Error', '' + err.statusText, 'error');
-        }
-      );
-      this.usuarioservices.usuario().subscribe((resp: Usuarios) => {
-        this.usuarioservices.Setuser(
-          resp.nombres,
-          resp.apellidos,
-          resp.usuario,
-          resp.password,
-          resp.estado,
-          resp.urlImagen
-        );
-      });
-    } else {
-      Swal.fire('Error', 'Los campos deben estar diligenciados', 'error');
+if(this.loginForm.valid){
+  this.usuarioservices.login(this.loginForm.value).subscribe(
+    (resp: token) => {
+      localStorage.setItem('token', resp.token);
+      localStorage.setItem('user', this.loginForm.get('usuario').value);
+      this.router.navigateByUrl('/inicio');
+    },
+    (err: Response) => {
+      Swal.fire('Error', '' + err.statusText, 'error');
     }
+  );
+
+
+}else{
+  this.usuarioerror=this.loginForm.get('usuario')?.errors?.['required'];
+}
   }
 }

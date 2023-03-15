@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { token } from '../interfaces/token';
 import { Usuarios } from '../interfaces/usuarios';
 import { tokenUsuarios } from '../interfaces/usuarios-token';
@@ -29,23 +29,44 @@ export class UsuariosService {
     return this.http
       .get<Usuarios>(this.Url + 'usuarios/us/' + localStorage.getItem('user'), {
         headers: this.cabeceras,
-      });
+      })
+      .pipe(
+        map((res: Usuario) => {
+          this.user = new Usuario(
+            res.nombres,
+            res.apellidos,
+            res.usuario,
+            res.password,
+            res.estado,
+            res.urlImagen
+          );
+          return res;
+        }),
+        catchError((error) => of(error))
+      );
   }
-  public Setuser(
-    nombres: string,
-    apellidos: string,
-    usuario: string,
-    password: string,
-    estado: boolean,
-    urlImagen: string
-  ) {
-    this.user = new Usuario(
-      nombres,
-      apellidos,
-      usuario,
-      password,
-      estado,
-      urlImagen
-    );
+
+  public tokenVerify(): Observable<boolean> {
+    return this.http
+      .get<Usuarios>(
+        this.Url + 'token/habilita/' + localStorage.getItem('user'),
+        {
+          headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
+        }
+      )
+      .pipe(
+        map((res: Usuario) => {
+          this.user = new Usuario(
+            res.nombres,
+            res.apellidos,
+            res.usuario,
+            res.password,
+            res.estado,
+            res.urlImagen
+          );
+          return true;
+        }),
+        catchError((error: boolean) => of(false))
+      );
   }
 }

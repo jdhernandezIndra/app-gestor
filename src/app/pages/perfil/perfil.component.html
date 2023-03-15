@@ -10,12 +10,12 @@
         aria-describedby="basic-addon1" [(ngModel)]="usuario.usuario" disabled>
     </div>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Nombres" aria-label="Username">
+      <input type="text" class="form-control" placeholder="Nombres" aria-label="Username" [(ngModel)]="usuario.nombres">
       <span class="input-group-text"></span>
-      <input type="text" class="form-control" placeholder="Apellidos" aria-label="Server">
+      <input type="text" class="form-control" placeholder="Apellidos" aria-label="Server" [(ngModel)]="usuario.apellidos">
     </div>
     <div class="mb-3">
-    <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+    <input type="checkbox" class="btn-check" id="btn-check-2" [(ngModel)]="usuario.estado">
     <label class="form-control btn btn-primary" for="btn-check-2">Estado</label>
   </div>
     <div class="input-group mb-3">

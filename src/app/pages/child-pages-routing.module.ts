@@ -5,8 +5,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 const childRoutes: Routes = [
   { path: 'inicio', component:InicioComponent},
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'perfil', component: PerfilComponent},
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
 ];
 
 @NgModule({

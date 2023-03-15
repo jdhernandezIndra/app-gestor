@@ -1,4 +1,4 @@
 export interface tokenUsuarios {
-  usuario: string;
-  password: string;
+  usuario?: string;
+  password?: string;
 }
