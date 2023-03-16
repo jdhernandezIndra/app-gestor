@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Usuario } from 'src/app/modelos/usuario';
 import { ApiImageService } from 'src/app/servicios/api-image.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
@@ -28,12 +29,26 @@ export class PerfilComponent {
         (response) => {
           this.usuario.urlImagen = response.url;
           this.usuarioservices.user.urlImagen= response.url;
-          Swal.fire('Se cargo imagen correctamente!');
         },
         (err: Response) => {
           Swal.fire('Error', '' + err.statusText, 'error');
         }
       );
     }
+  }
+
+  actualizarUser(){
+    const user:Usuarios={
+      id: null,
+      nombres: this.usuario.nombres,
+      apellidos: this.usuario.apellidos,
+      usuario: this.usuario.usuario,
+      password: this.usuario.password,
+      estado: this.usuario.estado,
+      urlImagen: this.usuario.urlImagen
+    }
+    this.usuarioservices.actualizarUsuario(user).subscribe((res:Usuarios)=>{
+      Swal.fire('Perfil','Se realizo el cambio exitosamente!','info');
+    });
   }
 }

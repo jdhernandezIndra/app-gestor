@@ -25,6 +25,7 @@ export class RegisterComponent {
     if(this.nombres!=''&&  this.apellidos!='' && this.password!='' && this.password2!='' && this.usuario!=''){
       if (this.password === this.password2) {
         const usuarioNuevo: Usuarios = {
+          id:null,
           nombres: this.nombres,
           apellidos: this.apellidos,
           usuario: this.usuario,

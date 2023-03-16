@@ -11,6 +11,7 @@ import { PaginasComponent } from './paginas.component';
 import { FooterComponent } from './principal/footer/footer.component';
 import { HeaderComponent } from './principal/header/header.component';
 import { MenuComponent } from './principal/menu/menu.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MenuComponent } from './principal/menu/menu.component';
     PaginasComponent,
     FooterComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    UsuariosComponent
   ],
   exports: [
     InicioComponent,

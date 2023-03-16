@@ -27,12 +27,11 @@ export class UsuariosService {
 
   public usuario(): Observable<Usuarios> {
     return this.http
-      .get<Usuarios>(this.Url + 'usuarios/us/' + localStorage.getItem('user'), {
-        headers: this.cabeceras,
-      })
+      .get<Usuarios>(this.Url + 'usuarios/us/' + localStorage.getItem('user'))
       .pipe(
         map((res: Usuario) => {
           this.user = new Usuario(
+            res.id,
             res.nombres,
             res.apellidos,
             res.usuario,
@@ -57,6 +56,7 @@ export class UsuariosService {
       .pipe(
         map((res: Usuario) => {
           this.user = new Usuario(
+            res.id,
             res.nombres,
             res.apellidos,
             res.usuario,
@@ -68,5 +68,17 @@ export class UsuariosService {
         }),
         catchError((error: boolean) => of(false))
       );
+  }
+
+  public actualizarUsuario(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(this.Url + 'usuarios/actualiza', usuario, {
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
+    });
+  }
+
+  public Usuarios(): Observable<Usuarios[]> {
+    return this.http.get<Usuarios[]>(this.Url + 'usuarios/lista', {
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
+    });
   }
 }
