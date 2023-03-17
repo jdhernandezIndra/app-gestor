@@ -32,6 +32,7 @@ export class RegisterComponent {
           password: this.password,
           estado: true,
           urlImagen: '',
+          rol:'ROLE_USER'
       };
 
       this.usuarioservices

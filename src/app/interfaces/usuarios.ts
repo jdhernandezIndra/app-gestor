@@ -5,5 +5,6 @@ export interface Usuarios {
   usuario: string;
   password: string;
   estado: boolean;
-  urlImagen: string
+  urlImagen: string;
+  rol:string;
 }

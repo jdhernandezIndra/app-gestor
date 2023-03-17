@@ -6,7 +6,8 @@ export class Usuario {
     public usuario: string,
     public password: string,
     public estado: boolean,
-    public urlImagen: string
+    public urlImagen: string,
+    public rol:string
   ) {}
 
   get imagenUrl(){

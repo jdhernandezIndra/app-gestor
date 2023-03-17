@@ -37,7 +37,8 @@ export class UsuariosService {
             res.usuario,
             res.password,
             res.estado,
-            res.urlImagen
+            res.urlImagen,
+            res.rol
           );
           return res;
         }),
@@ -62,7 +63,8 @@ export class UsuariosService {
             res.usuario,
             res.password,
             res.estado,
-            res.urlImagen
+            res.urlImagen,
+            res.rol
           );
           return true;
         }),

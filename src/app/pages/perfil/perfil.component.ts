@@ -45,7 +45,8 @@ export class PerfilComponent {
       usuario: this.usuario.usuario,
       password: this.usuario.password,
       estado: this.usuario.estado,
-      urlImagen: this.usuario.urlImagen
+      urlImagen: this.usuario.urlImagen,
+      rol:this.usuario.rol
     }
     this.usuarioservices.actualizarUsuario(user).subscribe((res:Usuarios)=>{
       Swal.fire('Perfil','Se realizo el cambio exitosamente!','info');
