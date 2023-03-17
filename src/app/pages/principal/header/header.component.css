@@ -1,7 +1,7 @@
 .w80p-fr{
   width: 87%;
   float: right;
-  height: 3%;
+  height: 2%;
   margin: 0 auto;
 }
 
@@ -15,4 +15,8 @@
 
 .dc-li{
   list-style: none;
+}
+
+.nav-link{
+  color: black;
 }
