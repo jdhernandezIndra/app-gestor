@@ -50,6 +50,9 @@ export class PerfilComponent {
     }
     this.usuarioservices.actualizarUsuario(user).subscribe((res:Usuarios)=>{
       Swal.fire('Perfil','Se realizo el cambio exitosamente!','info');
+    },
+    (err: Response) => {
+      Swal.fire('Error', 'No contiene los permisos para editar perfil, solicitelo a un administrador', 'error');
     });
   }
 }
