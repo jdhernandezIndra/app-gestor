@@ -78,9 +78,25 @@ export class UsuariosService {
     });
   }
 
+  public cambiarRol(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(this.Url + 'usuarios/rol', usuario, {
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
+    });
+  }
+
+
+  public inhabilitarUsuario(usuario: Usuarios): Observable<Usuarios> {
+    return this.http.put<Usuarios>(this.Url + 'usuarios/inhabilitar', usuario, {
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
+    });
+  }
+
   public Usuarios(): Observable<Usuarios[]> {
     return this.http.get<Usuarios[]>(this.Url + 'usuarios/lista', {
       headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
     });
   }
+
+
+
 }

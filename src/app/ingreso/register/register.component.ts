@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, of, throwError } from 'rxjs';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
@@ -19,7 +20,7 @@ export class RegisterComponent {
   public estado: boolean = true;
   public urlImagen: string = '';
 
-  constructor(private usuarioservices: UsuariosService) {}
+  constructor(private usuarioservices: UsuariosService,public router:Router) {}
 
   registrar() {
     if(this.nombres!=''&&  this.apellidos!='' && this.password!='' && this.password2!='' && this.usuario!=''){
@@ -49,6 +50,7 @@ export class RegisterComponent {
             'Se realizo exitosamente el registro',
             'success'
           );
+          this.router.navigateByUrl('/login');
         });
       } else {
         Swal.fire('Error', 'La contraseña no coincide', 'warning');
