@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
+import Swal from 'sweetalert2';
 import { token } from '../interfaces/token';
 import { Usuarios } from '../interfaces/usuarios';
 import { tokenUsuarios } from '../interfaces/usuarios-token';
@@ -84,7 +85,6 @@ export class UsuariosService {
     });
   }
 
-
   public inhabilitarUsuario(usuario: Usuarios): Observable<Usuarios> {
     return this.http.put<Usuarios>(this.Url + 'usuarios/inhabilitar', usuario, {
       headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
@@ -96,7 +96,4 @@ export class UsuariosService {
       headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
     });
   }
-
-
-
 }

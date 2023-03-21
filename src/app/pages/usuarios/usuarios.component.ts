@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { catchError } from 'rxjs';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Usuario } from 'src/app/modelos/usuario';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';

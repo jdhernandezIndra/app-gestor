@@ -2,7 +2,7 @@
   <div class="card col-10 col-app animate__animated animate__fadeIn animate__fast">
     <h3 class="card-header text-center">Usuarios perfil</h3>
     <div class="card-body">
-      <table class="table table-hover">
+      <table class="table table-hover" *ngIf="usuarios">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -39,6 +39,9 @@
           </tr>
         </tbody>
       </table>
+      <div class="alert alert-dark text-center" role="alert" *ngIf="!usuarios">
+        No existen datos
+      </div>
       <a class="btn btn-success mx-2"><i class="bi bi-file-earmark-spreadsheet-fill"></i></a><a
         class="btn btn-danger"><i class="bi bi-file-earmark-pdf"></i></a>
     </div>
