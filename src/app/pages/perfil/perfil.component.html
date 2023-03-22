@@ -1,9 +1,9 @@
-<div class="row justify-content-center">
-  <div class="col-8 col-app animate__animated animate__fadeIn animate__fast">
+<div class="row">
+  <div class="col-6 col-app animate__animated animate__fadeIn animate__fast">
     <h3 class="text-center">Editar perfil</h3>
     <div class="input-group md-6">
-      <img [src]="usuario.imagenUrl" class="rounded-circle mx-auto d-block img-thumbnail my-3" width="100"
-        height="100" alt="imagen de usuario">
+      <img [src]="usuario.imagenUrl" class="rounded-circle mx-auto d-block img-thumbnail my-3" width="100" height="100"
+        alt="imagen de usuario">
     </div>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Usuario" aria-label="Username"
@@ -12,19 +12,56 @@
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Nombres" aria-label="Username" [(ngModel)]="usuario.nombres">
       <span class="input-group-text"></span>
-      <input type="text" class="form-control" placeholder="Apellidos" aria-label="Server" [(ngModel)]="usuario.apellidos">
+      <input type="text" class="form-control" placeholder="Apellidos" aria-label="Server"
+        [(ngModel)]="usuario.apellidos">
     </div>
     <div class="input-group mb-3">
       <input type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña"
         aria-describedby="basic-addon1" [(ngModel)]="usuario.password">
     </div>
     <div class="mb-3">
-    <input type="checkbox" class="btn-check" id="btn-check-2" [(ngModel)]="usuario.estado" [checked]="usuario.estado">
-    <label class="form-control btn btn-primary" for="btn-check-2">{{usuario.estado? "Habilitado":"Inhabilitado"}}</label>
-  </div>
+      <input type="checkbox" class="btn-check" id="btn-check-2" [(ngModel)]="usuario.estado" [checked]="usuario.estado">
+      <label class="form-control btn btn-primary" for="btn-check-2">{{usuario.estado?
+        "Habilitado":"Inhabilitado"}}</label>
+    </div>
     <div class="input-group mb-3">
       <input type="file" accept="image/*" (change)="upload($event)" class="form-control" id="imagen">
     </div>
     <button type="button" class="form-control btn btn-success" (click)="actualizarUser()">Guardar</button>
   </div>
+
+  <div class="col-6 col-app animate__animated animate__fadeIn animate__fast">
+    <h3 class="text-center">Configuracion de App</h3>
+    <div class="row">
+      <div class="col">
+
+        <h4 class="text-center">Color Sidebar</h4>
+        <button type="button" class="col-12 btn btn-primary" (click)="cambio_color_sidebar('primary')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-secondary"
+          (click)="cambio_color_sidebar('secondary')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-success" (click)="cambio_color_sidebar('success')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-danger" (click)="cambio_color_sidebar('danger')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-warning" (click)="cambio_color_sidebar('warning')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-info" (click)="cambio_color_sidebar('info')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-light" (click)="cambio_color_sidebar('light')"><i class="bi bi-layout-sidebar-inset"></i></button>
+        <button type="button" class="col-12 btn btn-dark" (click)="cambio_color_sidebar('dark')"><i class="bi bi-layout-sidebar-inset"></i></button>
+      </div>
+      <div class="col">
+        <h4 class="text-center">Color Header</h4>
+        <button type="button" class="col-12 btn btn-primary" (click)="cambio_color_header('primary')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-secondary"
+          (click)="cambio_color_header('secondary')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-success" (click)="cambio_color_header('success')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-danger" (click)="cambio_color_header('danger')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-warning" (click)="cambio_color_header('warning')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-info" (click)="cambio_color_header('info')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-light" (click)="cambio_color_header('light')"><i class="bi bi-segmented-nav"></i></button>
+        <button type="button" class="col-12 btn btn-dark" (click)="cambio_color_header('dark')"><i class="bi bi-segmented-nav"></i></button>
+      </div>
+    </div>
+    <div class="row">
+      <button type="button" class="col-12 btn btn-dark my-5" (click)="formatear('dark')">Formatear</button>
+    </div>
+  </div>
+
 </div>

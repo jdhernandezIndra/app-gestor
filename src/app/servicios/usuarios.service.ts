@@ -13,11 +13,25 @@ import { Usuario } from '../modelos/usuario';
 export class UsuariosService {
   private Url = 'http://localhost:8080/';
   public user: Usuario;
-
+  public clase_header="";
+  public clase_sidebar="";
   public cabeceras = new HttpHeaders({
     authorization: 'Bearer ' + localStorage.getItem('token'),
   });
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if(localStorage.getItem('tema-header')){
+      this.clase_header=localStorage.getItem('tema-header');
+    }else{
+      this.clase_header="navbar bg-light w80p-fr";
+    }
+    if(localStorage.getItem('tema-header')){
+      this.clase_sidebar=localStorage.getItem('tema-sidebar');
+    }else{
+      this.clase_sidebar="sidebar-site bg-dark";
+    }
+
+
+  }
   public registra(usuario: Usuarios): Observable<Usuarios> {
     return this.http.post<Usuarios>(this.Url + 'usuarios/guardar', usuario);
   }

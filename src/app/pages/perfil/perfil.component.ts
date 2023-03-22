@@ -12,11 +12,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent {
+  public usuario: Usuario;
 
-  public usuario:Usuario;
-
-  constructor(private api: ApiImageService,public usuarioservices:UsuariosService) {
-    this.usuario= usuarioservices.user;
+  constructor(
+    private api: ApiImageService,
+    public usuarioservices: UsuariosService
+  ) {
+    this.usuario = usuarioservices.user;
   }
 
   upload(event: any) {
@@ -29,7 +31,7 @@ export class PerfilComponent {
       this.api.upFile(formdata).subscribe(
         (response) => {
           this.usuario.urlImagen = response.url;
-          this.usuarioservices.user.urlImagen= response.url;
+          this.usuarioservices.user.urlImagen = response.url;
         },
         (err: Response) => {
           Swal.fire('Error', '' + err.statusText, 'error');
@@ -38,8 +40,8 @@ export class PerfilComponent {
     }
   }
 
-  actualizarUser(){
-    const user:Usuarios={
+  actualizarUser() {
+    const user: Usuarios = {
       id: null,
       nombres: this.usuario.nombres,
       apellidos: this.usuario.apellidos,
@@ -47,13 +49,38 @@ export class PerfilComponent {
       password: this.usuario.password,
       estado: this.usuario.estado,
       urlImagen: this.usuario.urlImagen,
-      rol:this.usuario.rol
-    }
-    this.usuarioservices.actualizarUsuario(user).subscribe((res:Usuarios)=>{
-      Swal.fire('Perfil','Se realizo el cambio exitosamente!','info');
-    },
-    (err: Response) => {
-      Swal.fire('Error', 'No contiene los permisos para editar perfil, solicitelo a un administrador', 'error');
-    });
+      rol: this.usuario.rol,
+    };
+    this.usuarioservices.actualizarUsuario(user).subscribe(
+      (res: Usuarios) => {
+        Swal.fire('Perfil', 'Se realizo el cambio exitosamente!', 'info');
+      },
+      (err: Response) => {
+        Swal.fire(
+          'Error',
+          'No contiene los permisos para editar perfil, solicitelo a un administrador',
+          'error'
+        );
+      }
+    );
+  }
+
+  cambio_color_sidebar(tema: string) {
+    this.usuarioservices.clase_sidebar = 'sidebar-site bg-' + tema;
+    const site=document.querySelector('#sidebar');
+    site.classList.value=this.usuarioservices.clase_sidebar;
+    localStorage.setItem('tema-sidebar',this.usuarioservices.clase_sidebar);
+  }
+
+  cambio_color_header(tema: string) {
+    this.usuarioservices.clase_header = 'navbar bg-'+tema+' w80p-fr';
+    const nav=document.querySelector('#nav-header');
+    nav.classList.value=this.usuarioservices.clase_header;
+    localStorage.setItem('tema-header',this.usuarioservices.clase_header);
+  }
+
+  formatear(tema:string){
+    this.cambio_color_header('ligth');
+    this.cambio_color_sidebar(tema);
   }
 }
