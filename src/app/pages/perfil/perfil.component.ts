@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { delay } from 'rxjs';
 import { Usuarios } from 'src/app/interfaces/usuarios';
 import { Usuario } from 'src/app/modelos/usuario';
 import { ApiImageService } from 'src/app/servicios/api-image.service';

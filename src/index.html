@@ -14,10 +14,24 @@
 </head>
 
 <body>
+  <div id="spinner_carga">
+    <h5 class="text-center"><i class="bi bi-browser-safari"></i> App Gestor</h5>
+    <div id="spinner">
+
+    </div>
+  </div>
   <app-root></app-root>
   <!--<script src="./assets/js/bootstrap.bundle.min.js"></script>-->
   <script src="./assets/js/popper.min.js"></script>
   <script src="./assets/js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function () {
+      var spinner = document.getElementById('spinner_carga');
+
+      spinner.style.visibility = 'hidden';
+      spinner.style.opacity = '0';
+    }
+  </script>
 </body>
 
 </html>
