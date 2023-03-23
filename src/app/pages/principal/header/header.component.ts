@@ -31,7 +31,7 @@ export class HeaderComponent {
     if(tema.includes('site')){
       this.userservices.clase_sidebar= 'sidebar-active bg-secondary';
       this.userservices.clase_header='navbar bg-ligth w80p-fr-active';
-      this.userservices.clase_container='coustom-container-active';
+      this.userservices.clase_container='container-custom-active';
     }else{
       this.userservices.clase_sidebar= 'sidebar-site bg-dark';
       this.userservices.clase_header='navbar bg-ligth w80p-fr';
