@@ -66,8 +66,16 @@ export class PerfilComponent {
   }
 
   cambio_color_sidebar(tema: string) {
-    this.usuarioservices.clase_sidebar = 'sidebar-site bg-' + tema;
+    let tema_sidebar=localStorage.getItem('tema-sidebar');
+
     const site=document.querySelector('#sidebar');
+
+
+    if(tema_sidebar.includes('site')){
+      this.usuarioservices.clase_sidebar = 'sidebar-site bg-' + tema;
+    }else{
+      this.usuarioservices.clase_sidebar = 'sidebar-active bg-' + tema;
+    }
     site.classList.value=this.usuarioservices.clase_sidebar;
     localStorage.setItem('tema-sidebar',this.usuarioservices.clase_sidebar);
   }

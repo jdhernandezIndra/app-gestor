@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
-import Swal from 'sweetalert2';
 import { token } from '../interfaces/token';
 import { Usuarios } from '../interfaces/usuarios';
 import { tokenUsuarios } from '../interfaces/usuarios-token';
@@ -15,6 +14,7 @@ export class UsuariosService {
   public user: Usuario;
   public clase_header="";
   public clase_sidebar="";
+  public clase_container="";
   public cabeceras = new HttpHeaders({
     authorization: 'Bearer ' + localStorage.getItem('token'),
   });
@@ -28,6 +28,11 @@ export class UsuariosService {
       this.clase_sidebar=localStorage.getItem('tema-sidebar');
     }else{
       this.clase_sidebar="sidebar-site bg-dark";
+    }
+    if(localStorage.getItem('container-custom')){
+      this.clase_container=localStorage.getItem('container-custom');
+    }else{
+      this.clase_sidebar="container-custom";
     }
 
 

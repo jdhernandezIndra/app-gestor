@@ -24,14 +24,14 @@
             <td>{{usuario.usuario}}</td>
             <td>
               <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.rol"
-                (change)="CambiarRol(usuario)">
+                (change)="CambiarRol(usuario)" [disabled]="usuario.usuario==userServices.user.usuario">
                 <option value="ROLE_ADMIN">Admin</option>
                 <option value="ROLE_USER">User</option>
               </select>
             </td>
             <td>
               <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.estado"
-                (change)="inhabilitarUsuario(usuario)">
+                (change)="inhabilitarUsuario(usuario)" [disabled]="usuario.usuario==userServices.user.usuario">
                 <option value="true">Habilitado</option>
                 <option value="false">Inhabilitado</option>
               </select>

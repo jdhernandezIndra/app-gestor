@@ -17,7 +17,7 @@
 }
 
 .sidebar-active{
-  left: -15%;
+  width: 0px;
 }
 
 .w100p{
