@@ -1,0 +1,231 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "App-Gestor",
+    "dateExported": "2023-03-24T20:21:01.051Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed62e0b3-ab5c-4913-999e-fa70c3db64dd",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "ping",
+            "url": "ping",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-06T17:18:09.480Z",
+            "modified": "2023-03-08T17:13:57.062Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJkaGVybmFuZGV6IiwiZXhwIjoxNjgwODc5NzMyfQ.uPcxcV6HVtLS-2KBvRIX6D0jCIBajVg-9jooAWIy6tc531tzlz6Ks-VeAdwHTOLo",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "293337fe-4615-48ae-89f4-e277ec14f153",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "token",
+            "url": "token",
+            "method": "POST",
+            "sortNum": 12500,
+            "created": "2023-03-08T15:00:00.292Z",
+            "modified": "2023-03-21T18:15:37.691Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"usuario\":\"DHERNANDEZ\",\n  \"password\":\"2023*\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7b33afaa-01b4-4a83-b3ef-5fa7cd389fab",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "token verify",
+            "url": "token/habilita/DHERNANDEZ",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-03-15T20:41:40.912Z",
+            "modified": "2023-03-17T22:11:48.377Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiaWF0IjoxNjc5MDkxMDQ5LCJleHAiOjE2NzkxMDE4NDksImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.I748uNWbzLJuqiHGEWvNrY4oqerM4C4c_jDKU5y-xZmewxoNR5eIQMSvslU_UaXk"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "00fe4d85-56de-40df-91cb-26d35818d99e",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "usuarios",
+            "url": "usuarios/lista",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-08T14:38:50.941Z",
+            "modified": "2023-03-17T21:20:52.543Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJMTUFMQUdPTiIsImlhdCI6MTY3OTA4Nzk0MiwiZXhwIjoxNjc5MDk4NzQyLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dfQ.g9Hyr6f7mIRSBWJ_9Vk6HLjXPf2BVXcrTPqwJZm5ehJjJsFsDEYbyB0Zsrkp-r4g"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1e13b4c3-82ba-4efa-9a88-38acab864ede",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "usuarios id",
+            "url": "usuarios/us/DHERNANDEZ",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-08T14:49:33.353Z",
+            "modified": "2023-03-13T21:33:50.419Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "72c71107-5ead-430c-9c0c-7b50e995230b",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "guardar usuario",
+            "url": "usuarios/guardar",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-08T14:49:56.729Z",
+            "modified": "2023-03-17T20:57:49.187Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiaWF0IjoxNjc5MDg2NTIxLCJleHAiOjE2NzkwOTczMjEsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV19.WvOL1sGtCi_OSsTdVR05DwjYnJXC80vDtqGm1fOtvY8Jmkbr1Qm9KloKvH-4uZzv"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombres\": \"Laura Valentina\",\n  \"apellidos\": \"Malagon Lozano\",\n  \"usuario\": \"LMALAGON\",\n  \"password\": \"2023*\",\n  \"estado\": true,\n  \"urlImagen\": \"\",\n  \"rol\": \"ROLE_USER\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "15e1a351-fcbf-4c2b-bd67-ed14a92317e9",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "actualiza usuario",
+            "url": "usuarios/actualiza",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-03-08T14:50:59.286Z",
+            "modified": "2023-03-17T20:53:53.929Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "user",
+                    "value": "DHERNANDEZ",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": null,\n  \"nombres\": \"Jurgen Dario\",\n  \"apellidos\": \"Hernandez Anzola\",\n  \"usuario\": \"DHERNANDEZ\",\n  \"password\": \"2023*\",\n  \"estado\": true,\n  \"urlImagen\": \"http://localhost:8080/media/visualizar/perfil.jpeg\",\n  \"rol\": \"ROLE_ADMIN\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1852f957-227f-4ad3-9890-0f7150ea5a91",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "inhabilitar usuario",
+            "url": "usuarios/inhabilitar",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2023-03-08T14:51:53.326Z",
+            "modified": "2023-03-08T14:52:33.707Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 2,\n  \"nombres\": \"Jurgen Dario\",\n  \"apellidos\": \"Hernandez Anzola\",\n  \"usuario\": \"dhernandez\",\n  \"password\": \"2023*\",\n  \"estado\": false\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "120d5aee-4d80-464c-a02d-694d158cf8ae",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "imagen",
+            "url": "http://localhost:8080/media/visualizar/perfil.jpeg",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-03-09T22:21:44.248Z",
+            "modified": "2023-03-13T22:19:24.624Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiZXhwIjoxNjgwMTg3OTQ1fQ.66-koZ8UKg5Gc9Ji2tR_7uTF_JG23hZjteDKE9oVK9UW2g7PBM1ivEQs_-hTHUxS",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "280824f2-13c0-4540-aa53-fe81c00b9abe",
+            "colId": "7a490c6a-d821-4723-9f8d-c14fe79ea541",
+            "containerId": "",
+            "name": "cargar imagen",
+            "url": "media/cargar",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-03-09T22:21:41.671Z",
+            "modified": "2023-03-24T17:12:40.558Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiaWF0IjoxNjc5Njc3ODU0LCJleHAiOjE2Nzk2ODg2NTQsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.h7rSwEw8ZfOIhiEY3wStJJjLvuDVh57l52YzKSIU3DLulfZ61ZzMwb8kLj5Ud6Ry"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "c:\\Users\\jdhernandez\\Downloads\\perfil.jpeg"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJESEVSTkFOREVaIiwiaWF0IjoxNjc5NDIyNzMzLCJleHAiOjE2Nzk0MzM1MzMsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dfQ.SPM4Dt8MMpv-DyuVrpirvMEcjxCs_lKeRMuszFsgg6V59rXbfyDk-gkuEkfPlWDR"
+            }
+        ],
+        "tests": [],
+        "options": {
+            "baseUrl": "http://localhost:8080/"
+        }
+    }
+}
