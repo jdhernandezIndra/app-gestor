@@ -14,9 +14,20 @@ export class ApiFilesService {
   });
 
   public pdfUsuarios(): Observable<any> {
-    return this.http.get(this.Url + 'usuarios/pdf/lista',
-    {
-      headers: { authorization: 'Bearer ' + localStorage.getItem('token') },
-    });
+    const httpOptions = {
+      'responseType'  : 'arraybuffer' as 'json',
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') }
+       //'responseType'  : 'blob' as 'json'        //This also worked
+    };
+    return this.http.get(this.Url + 'usuarios/pdf/lista',httpOptions);
+  }
+
+  public excelUsuarios(): Observable<any> {
+    const httpOptions = {
+      'responseType'  : 'arraybuffer' as 'json',
+      headers: { authorization: 'Bearer ' + localStorage.getItem('token') }
+       //'responseType'  : 'blob' as 'json'        //This also worked
+    };
+    return this.http.get(this.Url + 'usuarios/excel/lista',httpOptions);
   }
 }

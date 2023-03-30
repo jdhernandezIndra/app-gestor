@@ -36,18 +36,19 @@ inhabilitarUsuario(user:Usuarios){
     Swal.fire('Error', 'Por favor verificar su nivel de rol', 'error');
   });
 }
-descargar(){
-  /*this.apiFiles.pdfUsuarios().subscribe(data=>{
-    const dataType=data.type;
-    const binaryData=[];
-binaryData.push(data);
+descargarPdf(){
+  this.apiFiles.pdfUsuarios().subscribe(data=>{
+    let file = new Blob([data], { type: 'application/pdf' });
+    var fileURL = URL.createObjectURL(file);
+    window.open(fileURL);
+  });
+}
 
-    const filtepath=window.URL.createObjectURL(new Blob(binaryData,{type:dataType}));
-    const downloadLink=document.createElement('a');
-    downloadLink.href=filtepath;
-    downloadLink.setAttribute('download','reporte_usuarios');
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-  });*/
+descargarExcel(){
+  this.apiFiles.excelUsuarios().subscribe(data=>{
+    let file = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    var fileURL = URL.createObjectURL(file);
+    window.open(fileURL);
+  });
 }
 }
