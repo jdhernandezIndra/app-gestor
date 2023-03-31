@@ -12,6 +12,8 @@ import { FooterComponent } from './principal/footer/footer.component';
 import { HeaderComponent } from './principal/header/header.component';
 import { MenuComponent } from './principal/menu/menu.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { MapsComponent } from './maps/maps.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    MapsComponent
   ],
   exports: [
     InicioComponent,
@@ -34,7 +37,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ]
 })
 export class PagesModule {}
