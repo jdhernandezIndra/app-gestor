@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MapsComponent {
   center = {lat: 24, lng: 12};
-  zoom = 15;
+  zoom = 5;
   display?: google.maps.LatLngLiteral;
 }
